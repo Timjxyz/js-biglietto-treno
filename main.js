@@ -14,32 +14,36 @@ let prezzoFinale = distanza * prezzoPerKm;
 let scontoMinori = ((prezzoFinale * 20) /100);
 
 //Prezzo dei minori
-let prezzoMinorenni = prezzoFinale - scontoMinori;
+let prezzoMinorenni;
 
 //Sconto applicato ai pensionati
 let scontoPensionati = ((prezzoFinale * 40) /100);
 
 //Prezzo dei pensionati
-let prezzoPensionati = prezzoFinale - scontoMinori;
+let prezzoPensionati;
+
 
 if (etaViaggiatore < 18){
     //Prezzo del biglietto se sono minori
     
     prezzoMinorenni = prezzoFinale - scontoMinori;
-    document.getElementById('prezzo').innerHTML ='Il prezzo è:' + '' + prezzoMinorenni + '€';
-    document.getElementById('sconto').innerHTML ='Hai diritto allo sconto Minorenni del 20%!';
 
+    document.getElementById('prezzo').innerHTML ='Il prezzo è:' + prezzoMinorenni.toFixed(2) + '€';
+    document.getElementById('sconto').innerHTML ='Hai diritto allo sconto Minorenni del 20%!';
+    
 } else if(etaViaggiatore >=66 ){
     //Prezzo del biglietto se sono pensionati
 
     prezzoPensionati = prezzoFinale - scontoPensionati;
-    document.getElementById('prezzo').innerHTML ='Il prezzo è:' + '' + prezzoPensionati + '€';
+    
+    document.getElementById('prezzo').innerHTML ='Il prezzo è:' + prezzoPensionati.toFixed(2) + '€';
     document.getElementById('sconto').innerHTML ='Hai diritto allo sconto Senior del 40%!';
+    
 }
 else{
-    document.getElementById('prezzo').innerHTML ='Il prezzo è:' + '' + prezzoFinale + '€';
+    document.getElementById('prezzo').innerHTML ='Il prezzo è:' + prezzoFinale.toFixed(2) + '€';
 }
 
-
+   
 
 
